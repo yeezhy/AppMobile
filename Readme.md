@@ -2,7 +2,6 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
 https://forms.gle/zrM41SZyR8F4ubEE9
 
 
@@ -14,19 +13,17 @@ A rendre pour le 07/04/2023
 
 
 
-Mini jeu calcul mentale , 2 langue , français + une autre
+Mini jeu de calcul mental, 2 langues, français + une autre
 
-ANdroid 9.0
+Android 9.0
 
 3 notes : 
 
-Une sur la partie visuel  : User experience
+    Une sur la partie visuel  : User experience
 
-UNe sur la partie java  : fonctionnement general de l'appli
+    UNe sur la partie java  : fonctionnement general de l'appli
 
-Une partie BDD : init  de la base , sauvegarde , recuperation de données.
-
-
+    Une partie BDD : init  de la base , sauvegarde , recuperation de données.
 
 
 Une activité  menu principal ::
