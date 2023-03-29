@@ -5,17 +5,16 @@
 https://forms.gle/zrM41SZyR8F4ubEE9
 
 
--------------------------------------------------------SUJET PROJET---------------------------------------------------------------------------
-
+----------------------------------------------------------------SUJET PROJET---------------------------------------------------------------------------
 
 
 A rendre pour le 07/04/2023
 
 
-
 Mini jeu de calcul mental, 2 langues, français + une autre
 
 Android 9.0
+
 
 3 notes : 
 
@@ -25,41 +24,33 @@ Android 9.0
 
     Une partie BDD : init  de la base , sauvegarde , recuperation de données.
 
+Une activité  menu principal :
 
-Une activité  menu principal ::
-
-- 2 bouton minmum , un bouton Vers l'écran de jeu , un bouton sur une page highscore
-
-
-
+    2 boutons minmum, un bouton Vers l'écran de jeu, un bouton sur une page highscore
 
 Une activité jeu :
 
-Une toolbar  avec dedans le score et le nombre de vie réstante
+    Une toolbar avec dedans le score et le nombre de vie réstante
 
-TextView Un calcul sera généré dans une textView 
+    TextView Un calcul sera généré dans une textView 
 
-A chaque bonne réponse score +1 a chaque mauvaise reponse vie -1 
+    A chaque bonne réponse score +1 a chaque mauvaise reponse vie -1 
 
-si plus de vie on ouvre une activité d'enregistrement (Score via intent)
+    si plus de vie on ouvre une activité d'enregistrement (Score via intent)
 
 
 
 Activité d'enregistrement :
 
-Un champs de saisie de texte , et un bouton enregistrer (lors d'un appui sur enregistrer on vient save dans une BDD au minimum le score et le pseudo)
+    Un champs de saisie de texte , et un bouton enregistrer (lors d'un appui sur enregistrer on vient save dans une BDD au minimum le score et le pseudo)
 
 
 Activité high score:
 
-AU chargement on affiche les infos du meilleur ( On vient select unuqiement le meilleur score)
-
+    Au chargement on affiche les infos du meilleur ( On vient select unuqiement le meilleur score)
 
 Activité a propos :
 
-Les 2 noms du binomes,Feature en plus.
-
-
+    Les 2 noms du binomes,Feature en plus.
 
 Contact : jerome.gerard02@outlook.fr
-
