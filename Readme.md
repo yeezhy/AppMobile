@@ -38,12 +38,10 @@ Une activité jeu :
 
     si plus de vie on ouvre une activité d'enregistrement (Score via intent)
 
-
-
 Activité d'enregistrement :
 
-    Un champs de saisie de texte , et un bouton enregistrer (lors d'un appui sur enregistrer on vient save dans une BDD au minimum le score et le pseudo)
-
+    Un champs de saisie de texte , et un bouton enregistrer 
+    (lors d'un appui sur enregistrer on vient save dans une BDD au minimum le score et le pseudo)
 
 Activité high score:
 
