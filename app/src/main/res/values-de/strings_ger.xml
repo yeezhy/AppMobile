@@ -5,11 +5,7 @@
     <string name= "toolbar_clear">Nettoyer en allemand</string>
     <string name="ERROR_ALREADY_HAVE_CALCUL_TYPE"> Il ne peut y avoir qu\'un seul type de calcul en allemand</string>
     <string name="ERROR_NUMBER_TOO_HIGH"> Le nombre est trop grand en allemand</string>
-    <string name="TOOLBAR_CALCUL">FAIS LE CALCUL !</string>
+    <string name="TOOLBAR_SCORE">FAIS LE CALCUL !</string>
     <string name="MALFORMED_CALCUL"> Calcul malformé en allemand</string>
-
-
-
-
 
 </resources>

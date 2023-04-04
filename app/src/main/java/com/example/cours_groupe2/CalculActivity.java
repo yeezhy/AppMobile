@@ -1,6 +1,5 @@
 package com.example.cours_groupe2;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,10 +17,10 @@ import com.example.cours_groupe2.model.entities.Calcul;
 
 public class CalculActivity extends AppCompatActivity {
     private TextView textViewCalcul;
-    private Button boutonPlus;
+    private Button boutonVerif;
     private Button boutonDivide;
     private Button boutonSubstract;
-    private Button boutonMultiply;
+    private Button boutonClear;
     private Button bouton1;
     private Button bouton2;
     private Button bouton3;
@@ -51,9 +50,19 @@ public class CalculActivity extends AppCompatActivity {
         boutonDivide.setOnClickListener(view -> {
             ajouterSymbole(TypeOperationEnum.DIVIDE);
         });
-        boutonPlus = findViewById(R.id.button_plus);
-        boutonPlus.setOnClickListener(view -> {
-            ajouterSymbole(TypeOperationEnum.ADD);
+        boutonSubstract = findViewById(R.id.button_substract);
+        boutonSubstract.setOnClickListener(view -> {
+            ajouterSymbole(TypeOperationEnum.SUBSTRACT);
+        });
+        boutonVerif = findViewById(R.id.button_verif);
+        boutonVerif.setOnClickListener(view -> {
+           faisLeCalcul();
+        });
+        boutonClear = findViewById(R.id.button_clear);
+        boutonClear.setOnClickListener(view -> {
+            textViewCalcul.setText("0");
+            calcul = "";
+            this.typeOperation = null;
         });
         bouton0 = findViewById(R.id.buttonZero);
         bouton0.setOnClickListener(view -> {
@@ -95,15 +104,6 @@ public class CalculActivity extends AppCompatActivity {
         bouton9.setOnClickListener(view -> {
             ajouterChiffre(9);
         });
-        boutonSubstract = findViewById(R.id.button_substract);
-        boutonSubstract.setOnClickListener(view -> {
-            ajouterSymbole(TypeOperationEnum.SUBSTRACT);
-        });
-        boutonMultiply = findViewById(R.id.button_multiply);
-        boutonMultiply.setOnClickListener(view -> {
-            ajouterSymbole(TypeOperationEnum.MULTIPLY);
-        });
-
     }
 
     private void ajouterSymbole(TypeOperationEnum typeOperation) {
@@ -150,17 +150,12 @@ public class CalculActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.toolbar, menu);
-        MenuItem boutonNettoyer = menu.findItem(R.id.toolbar_clear);
+        MenuItem boutonNettoyer = menu.findItem(R.id.toolbar_vie);
         boutonNettoyer.setOnMenuItemClickListener(view -> {
             textViewCalcul.setText("");
             calcul = "";
             this.typeOperation = null;
             return true;
-        });
-
-        MenuItem boutonCalcul = menu.findItem(R.id.toolbar_calcul);
-        boutonCalcul.setOnMenuItemClickListener(view -> {
-            return faisLeCalcul();
         });
 
         return super.onCreateOptionsMenu(menu);

@@ -32,11 +32,11 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_plus"
+                    android:id="@+id/button_verif"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/text_bouton_plus" />
+                    android:text="@string/text_bouton_verif" />
 
                 <Button
                     android:id="@+id/button_substract"
@@ -53,11 +53,11 @@
                     android:text="@string/text_bouton_divide" />
 
                 <Button
-                    android:id="@+id/button_multiply"
+                    android:id="@+id/button_clear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/text_bouton_multiply" />
+                    android:text="@string/text_bouton_clear" />
             </LinearLayout>
 
             <LinearLayout
