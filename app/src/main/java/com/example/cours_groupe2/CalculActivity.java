@@ -151,12 +151,12 @@ public class CalculActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.toolbar, menu);
         MenuItem textViewVie = findViewById(R.id.toolbar_vie);
-        textViewVie.set(view -> {
+        /*textViewVie.(view -> {
             textViewCalcul.setText("");
             calcul = "";
             this.typeOperation = null;
             return true;
-        });
+        });*/
 
         return super.onCreateOptionsMenu(menu);
     }
