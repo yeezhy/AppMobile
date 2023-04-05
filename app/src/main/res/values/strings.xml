@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">cours_groupe2</string>
+    <string name="app_name" translatable="false">Jeu calcul mental</string>
     <string name="text_bouton_calcul">Mini jeu de calcul</string>
     <string name="text_bouton_dernier_calcul">Meilleurs scores</string>
     <string name="text_bouton_0" translatable="false">0</string>
@@ -12,7 +12,7 @@
     <string name="text_bouton_7" translatable="false">7</string>
     <string name="text_bouton_8" translatable="false">8</string>
     <string name="text_bouton_9" translatable="false">9</string>
-    <string name="text_bouton_plus" translatable="false">+</string>
+    <string name="text_bouton_verif" translatable="false">Vérifier</string>
     <string name="text_bouton_substract" translatable="false">-</string>
     <string name="text_bouton_multiply" translatable="false">x</string>
     <string name="text_bouton_divide" translatable="false">/</string>

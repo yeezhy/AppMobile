@@ -8,6 +8,6 @@
     <string name="TOOLBAR_CALCUL">DO CALCULATION</string>
     <string name="MALFORMED_CALCUL">Malformed calculation</string>
     <string name="app_name">Mental calculation game</string>
-    <string name="text_bouton_verif">Send</string>
+    <string name="text_bouton_">Send</string>
 
 </resources>

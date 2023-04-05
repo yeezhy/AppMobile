@@ -150,7 +150,7 @@ public class CalculActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.toolbar, menu);
-        MenuItem boutonNettoyer = menu.findItem(R.id.toolbar_clear);
+        MenuItem boutonNettoyer = menu.findItem(R.id.toolbar_score);
         boutonNettoyer.setOnMenuItemClickListener(view -> {
             textViewCalcul.setText("");
             calcul = "";
@@ -158,7 +158,7 @@ public class CalculActivity extends AppCompatActivity {
             return true;
         });
 
-        MenuItem boutonCalcul = menu.findItem(R.id.toolbar_calcul);
+        MenuItem boutonCalcul = menu.findItem(R.id.toolbar_vie);
         boutonCalcul.setOnMenuItemClickListener(view -> {
             return faisLeCalcul();
         });
