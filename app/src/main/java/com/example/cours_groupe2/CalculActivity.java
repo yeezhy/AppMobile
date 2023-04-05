@@ -1,7 +1,5 @@
 package com.example.cours_groupe2;
 
-import static com.example.cours_groupe2.R.id.textViewCalcul;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,12 +16,8 @@ import com.example.cours_groupe2.DAO.CalculBaseHelper;
 import com.example.cours_groupe2.DAO.CalculDao;
 import com.example.cours_groupe2.model.entities.Calcul;
 
-import java.util.Random;
-
 public class CalculActivity extends AppCompatActivity {
     private TextView textViewCalcul;
-
-    private Button calculJeu;
     private Button boutonPlus;
     private Button boutonDivide;
     private Button boutonSubstract;
@@ -42,7 +36,9 @@ public class CalculActivity extends AppCompatActivity {
     private Integer premierTerme = 0;
     private Integer deuxiemeTerme = 0;
     private TypeOperationEnum typeOperation;
+
     private CalculDao calculDao;
+
     private String calcul = "";
 
     @Override
@@ -51,7 +47,6 @@ public class CalculActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calcul);
         calculDao= new CalculDao(new CalculBaseHelper(this,"BDD",1));
         textViewCalcul = findViewById(R.id.textViewCalcul);
-        calculAleatoire();
         boutonDivide = findViewById(R.id.button_divide);
         boutonDivide.setOnClickListener(view -> {
             ajouterSymbole(TypeOperationEnum.DIVIDE);
@@ -60,7 +55,6 @@ public class CalculActivity extends AppCompatActivity {
         boutonPlus.setOnClickListener(view -> {
             ajouterSymbole(TypeOperationEnum.ADD);
         });
-
         bouton0 = findViewById(R.id.buttonZero);
         bouton0.setOnClickListener(view -> {
             ajouterChiffre(0);
@@ -211,31 +205,5 @@ public class CalculActivity extends AppCompatActivity {
         } else {
             return true;
         }
-    }
-
-    private void calculAleatoire(){
-        premierTerme = new Random().nextInt(10 + 1);
-        deuxiemeTerme = new Random().nextInt(10 + 1);
-        int signeAléatoire = new Random().nextInt(4 + 1);
-        switch (signeAléatoire){
-            case 1:
-                typeOperation = TypeOperationEnum.SUBSTRACT;
-                break;
-            case 2:
-                typeOperation = TypeOperationEnum.ADD;
-                break;
-            case 3:
-                typeOperation = TypeOperationEnum.DIVIDE;
-                break;
-            case 4:
-                typeOperation = TypeOperationEnum.MULTIPLY;
-                break;
-        }
-
-        Integer premierNombre = premierTerme;
-        Integer deuxiemeNombre = deuxiemeTerme;
-        String signe = typeOperation.getSymbole();
-
-        textViewCalcul.setText(premierNombre + signe + deuxiemeNombre);
     }
 }

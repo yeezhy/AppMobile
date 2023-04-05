@@ -20,9 +20,9 @@
             android:text="@string/text_bouton_calcul" />
 
         <Button
-            android:id="@+id/boutonDernierCalcul"
+            android:id="@+id/boutonMeilleurScore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_bouton_dernier_calcul" />
+            android:text="@string/text_bouton_meilleur_score" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button boutonCalcul;
 
-    private Button boutonDernierCalcul;
+    private Button boutonMeilleurScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        boutonDernierCalcul= findViewById(R.id.boutonDernierCalcul);
-        boutonDernierCalcul.setOnClickListener(view -> {
+        boutonMeilleurScore= findViewById(R.id.boutonMeilleurScore);
+        boutonMeilleurScore.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this,LastActivity.class);
             startActivity(intent);
         });

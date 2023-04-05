@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/toolbar_clear"
-        android:title="@string/toolbar_clear" />
+        android:id="@+id/toolbar_score"
+        android:title="@string/TOOLBAR_SCORE"
+        app:showAsAction="always"
+        android:gravity="center" />
     <item
-        android:id="@+id/toolbar_calcul"
-        android:title="@string/TOOLBAR_CALCUL"
-        app:showAsAction="always" />
+        android:id="@+id/toolbar_vie"
+        android:title="TODO"
+        tools:showAsAction="always"
+        android:gravity="center" />
 </menu>
