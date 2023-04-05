@@ -150,8 +150,8 @@ public class CalculActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.toolbar, menu);
-        MenuItem boutonNettoyer = menu.findItem(R.id.toolbar_vie);
-        boutonNettoyer.setOnMenuItemClickListener(view -> {
+        MenuItem textViewVie = findViewById(R.id.toolbar_vie);
+        textViewVie.set(view -> {
             textViewCalcul.setText("");
             calcul = "";
             this.typeOperation = null;
