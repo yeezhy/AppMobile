@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Jeu calcul mental</string>
     <string name="text_bouton_calcul">Mini jeu de calcul</string>
-    <string name="text_bouton_dernier_calcul">Meilleurs scores</string>
+    <string name="text_bouton_meilleur_score">Meilleurs scores</string>
     <string name="text_bouton_0" translatable="false">0</string>
     <string name="text_bouton_1" translatable="false">1</string>
     <string name="text_bouton_2" translatable="false">2</string>
@@ -16,10 +16,11 @@
     <string name="text_bouton_substract" translatable="false">-</string>
     <string name="text_bouton_multiply" translatable="false">x</string>
     <string name="text_bouton_divide" translatable="false">/</string>
-    <string name="toolbar_clear">Nettoyer</string>
+    <string name="text_bouton_clear">Nettoyer</string>
+    <string name="TOOLBAR_VIE">VIE :</string>
+    <string name="TOOLBAR_SCORE">SCORE :</string>
     <string name="ERROR_ALREADY_HAVE_CALCUL_TYPE"> Il ne peut y avoir qu\'un seul type de calcul</string>
     <string name="ERROR_NUMBER_TOO_HIGH"> Le nombre est trop grand</string>
-    <string name="TOOLBAR_CALCUL">FAIS LE CALCUL !</string>
     <string name="MALFORMED_CALCUL"> Calcul malformé</string>
 
 </resources>

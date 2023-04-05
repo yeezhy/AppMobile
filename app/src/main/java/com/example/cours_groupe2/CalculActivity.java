@@ -62,7 +62,9 @@ public class CalculActivity extends AppCompatActivity {
         boutonClear.setOnClickListener(view -> {
             textViewCalcul.setText("0");
             calcul = "";
-            this.typeOperation = null;
+            this.typeOperation=null;
+            this.premierTerme = 0;
+            this.deuxiemeTerme = 0;
         });
         bouton0 = findViewById(R.id.buttonZero);
         bouton0.setOnClickListener(view -> {
