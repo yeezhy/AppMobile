@@ -1,4 +1,5 @@
 package com.example.cours_groupe2;
+import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,15 +12,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.cours_groupe2.DAO.CalculBaseHelper;
-import com.example.cours_groupe2.DAO.CalculDao;
-import com.example.cours_groupe2.model.entities.Calcul;
+import com.example.cours_groupe2.DAO.ScoreBaseHelper;
+import com.example.cours_groupe2.DAO.ScoreDao;
 
 public class CalculActivity extends AppCompatActivity {
-    private TextView textViewCalcul;
+    private TextView textViewRep;
+    private TextView textViewCal;
+    private MenuItem score;
+    private Integer nbrScore=0;
+    private MenuItem vie;
+    private Integer nbrVie=3;
+
     private Button boutonVerif;
-    private Button boutonDivide;
-    private Button boutonSubstract;
     private Button boutonClear;
     private Button bouton1;
     private Button bouton2;
@@ -35,37 +39,22 @@ public class CalculActivity extends AppCompatActivity {
     private Integer premierTerme = 0;
     private Integer deuxiemeTerme = 0;
     private TypeOperationEnum typeOperation;
+    private Integer resultat = 0;
+    private Integer calculerResultat = 0;
 
-    private CalculDao calculDao;
+    private ScoreDao calculDao;
 
-    private String calcul = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
-        calculDao= new CalculDao(new CalculBaseHelper(this,"BDD",1));
-        textViewCalcul = findViewById(R.id.textViewCalcul);
-        boutonDivide = findViewById(R.id.button_divide);
-        boutonDivide.setOnClickListener(view -> {
-            ajouterSymbole(TypeOperationEnum.DIVIDE);
-        });
-        boutonSubstract = findViewById(R.id.button_substract);
-        boutonSubstract.setOnClickListener(view -> {
-            ajouterSymbole(TypeOperationEnum.SUBSTRACT);
-        });
-        boutonVerif = findViewById(R.id.button_verif);
-        boutonVerif.setOnClickListener(view -> {
-           faisLeCalcul();
-        });
-        boutonClear = findViewById(R.id.button_clear);
-        boutonClear.setOnClickListener(view -> {
-            textViewCalcul.setText("0");
-            calcul = "";
-            this.typeOperation=null;
-            this.premierTerme = 0;
-            this.deuxiemeTerme = 0;
-        });
+
+        calculDao= new ScoreDao(new ScoreBaseHelper(this,"BDD",1));
+
+        textViewCal = findViewById(R.id.textViewCal);
+        textViewRep = findViewById(R.id.textViewRep);
+
         bouton0 = findViewById(R.id.buttonZero);
         bouton0.setOnClickListener(view -> {
             ajouterChiffre(0);
@@ -106,101 +95,102 @@ public class CalculActivity extends AppCompatActivity {
         bouton9.setOnClickListener(view -> {
             ajouterChiffre(9);
         });
+
+        boutonVerif = findViewById(R.id.button_verif);
+        boutonVerif.setOnClickListener(view -> {
+            verifieLeCalcul();
+        });
+        boutonClear = findViewById(R.id.button_clear);
+        boutonClear.setOnClickListener(view -> {
+            calculerResultat= calculerResultat/10;
+            majTextRep();
+        });
+
+        genererCalcul();
+        majTextView();
+        calculerResultat=0;
+        majTextRep();
     }
 
-    private void ajouterSymbole(TypeOperationEnum typeOperation) {
-        if (this.typeOperation != null) {
-            Toast.makeText(this, getString(R.string.ERROR_ALREADY_HAVE_CALCUL_TYPE), Toast.LENGTH_LONG).show();
-        } else {
-            this.typeOperation = typeOperation;
-            majTextView();
+    private void genererCalcul() {
+        Integer typeOpera;
+        Random random = new Random();
+        premierTerme = random.nextInt(10) + 1;
+        deuxiemeTerme = random.nextInt(10) + 1;
+        typeOpera = random.nextInt(4);
+
+        switch (typeOpera) {
+            case 0:
+                typeOperation = TypeOperationEnum.ADD;
+                resultat = premierTerme+deuxiemeTerme;
+                break;
+            case 1:
+                typeOperation = TypeOperationEnum.SUBSTRACT;
+                resultat = premierTerme-deuxiemeTerme;
+                break;
+            case 2:
+                typeOperation = TypeOperationEnum.MULTIPLY;
+                resultat = premierTerme*deuxiemeTerme;
+                break;
+            case 3:
+                typeOperation = TypeOperationEnum.DIVIDE;
+                resultat = premierTerme;
+                premierTerme = resultat*deuxiemeTerme;
+                break;
         }
     }
 
     private void ajouterChiffre(Integer chiffre) {
-        if (this.typeOperation == null) {
-            if (premierTerme <= 9999) {
-                premierTerme = 10 * premierTerme + chiffre;
-                majTextView();
-            } else {
-                Toast.makeText(this, getString(R.string.ERROR_NUMBER_TOO_HIGH), Toast.LENGTH_LONG).show();
-            }
-        } else {
-            if (deuxiemeTerme <= 9999) {
-                deuxiemeTerme = 10 * deuxiemeTerme + chiffre;
-                majTextView();
-            } else {
-                Toast.makeText(this, getString(R.string.ERROR_NUMBER_TOO_HIGH), Toast.LENGTH_LONG).show();
-            }
+        if(calculerResultat<=999){
+            calculerResultat=10*calculerResultat+chiffre;
+            majTextRep();
+        }else{
+            Toast.makeText(this,getString(R.string.ERROR_NUMBER_TOO_HIGH), Toast.LENGTH_LONG).show();
         }
     }
 
-    private void majTextView() {
-        if (typeOperation == null) {
-            textViewCalcul.setText("" + premierTerme);
-        } else {
-            textViewCalcul.setText(premierTerme + typeOperation.getSymbole() + deuxiemeTerme);
-        }
+    private void majTextView(){
+        textViewCal.setText(premierTerme + typeOperation.getSymbole() + deuxiemeTerme);
     }
 
-    private void ajouteCharactere(String character) {
-        calcul += character;
-        textViewCalcul.setText(calcul);
+    private void majTextRep(){
+        textViewRep.setText(""+calculerResultat);
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.toolbar, menu);
-        MenuItem textViewVie = findViewById(R.id.toolbar_vie);
-        /*textViewVie.(view -> {
-            textViewCalcul.setText("");
-            calcul = "";
-            this.typeOperation = null;
-            return true;
-        });*/
-
+        menuInflater.inflate(R.menu.toolbar,menu);
+        score = menu.findItem(R.id.toolbar_score);
+        this.score.setTitle("Score : "+nbrScore);
+        vie = menu.findItem(R.id.toolbar_vie);
+        this.vie.setTitle("Vies : "+nbrVie);
         return super.onCreateOptionsMenu(menu);
     }
 
-    private boolean faisLeCalcul() {
-        Integer resultat=0;
-        if(verifieLeCalcul()){
-            switch (typeOperation){
-                case ADD:
-                    resultat =premierTerme+deuxiemeTerme;
-                    break;
-                case SUBSTRACT:
-                    resultat = premierTerme-deuxiemeTerme;
-                    break;
-                case DIVIDE:
-                    resultat = premierTerme/deuxiemeTerme;
-                    break;
-                case MULTIPLY:
-                    resultat= premierTerme*deuxiemeTerme;
-            }
-            Calcul monCalcul = new Calcul();
-            monCalcul.setPremierElement(premierTerme);
-            monCalcul.setDeuxiemeElement(deuxiemeTerme);
-            monCalcul.setResultat(resultat);
-            monCalcul.setSymbole(typeOperation.getSymbole());
-            calculDao.create(monCalcul);
-            Intent intent = new Intent(this,ResulstatActivity.class);
-            intent.putExtra("PREMIER_TERME",premierTerme);
-            intent.putExtra("symbol",typeOperation.getSymbole());
-            intent.putExtra("DEUXIEME_TERME",deuxiemeTerme);
-            intent.putExtra("RESULTAT",resultat);
+    private void verifieLeCalcul(){
+        if(calculerResultat==resultat){
+            nbrScore++;
+            this.score.setTitle("Score : "+nbrScore);
+        }else{
+            nbrVie--;
+            this.vie.setTitle("Vies : "+nbrVie);
+        }
+
+        if(nbrVie<=0){
+            Intent intent = new Intent(CalculActivity.this, ResulstatActivity.class);
+            intent.putExtra("SCORE", nbrScore);
             startActivity(intent);
         }
-        return true;
+
+        genererCalcul();
+        majTextView();
+        calculerResultat=0;
+        majTextRep();
     }
 
-    private boolean verifieLeCalcul() {
-        if ((premierTerme == 0 || deuxiemeTerme == 0 || typeOperation == null)) {
-            Toast.makeText(this, getString(R.string.MALFORMED_CALCUL), Toast.LENGTH_LONG).show();
-            return false;
-        } else {
-            return true;
-        }
-    }
+
 }

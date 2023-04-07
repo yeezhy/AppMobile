@@ -8,17 +8,8 @@
         app:showAsAction="always"
         android:gravity="center" />
     <item
-        android:id="@+id/toolbar_score_num"
-        android:title="1"
-        app:showAsAction="always"
-        android:gravity="center" />
-    <item
         android:id="@+id/toolbar_vie"
         android:gravity="center"
         android:title="@string/TOOLBAR_VIE"
         app:showAsAction="always" />
-    <item android:id="@+id/toolbar_vie_num"
-        android:title="2"
-        app:showAsAction="always"
-        android:gravity="center" />
 </menu>

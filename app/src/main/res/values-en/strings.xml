@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="text_bouton_calcul">Calculation</string>
-    <string name="text_bouton_dernier_calcul">Last calculation</string>
-    <string name= "toolbar_clear">Clear</string>
-    <string name="ERROR_ALREADY_HAVE_CALCUL_TYPE">There can only be one type of calculation</string>
-    <string name="ERROR_NUMBER_TOO_HIGH">Number too high</string>
-    <string name="TOOLBAR_CALCUL">DO CALCULATION</string>
-    <string name="MALFORMED_CALCUL">Malformed calculation</string>
     <string name="app_name">Mental calculation game</string>
-    <string name="text_bouton_">Send</string>
-
+    <string name="text_bouton_calcul">Calculation</string>
+    <string name="text_bouton_meilleur_score">Last calculation</string>
+    <string name="TOOLBAR_VIE">Lifes :</string>
+    <string name="TOOLBAR_SCORE">Score :</string>
+    <string name="text_bouton_verif">Verification</string>
+    <string name="text_bouton_clear">Clear</string>
+    <string name="text_saisie_nom">Enter your name</string>
+    <string name="text_save">Save</string>
+    <string name="text_classement">Ranking</string>
+    <string name="text_J1">Player 1: </string>
+    <string name="text_J2">Player 2: </string>
+    <string name="text_J3">Player 3: </string>
+    <string name="ERROR_NUMBER_TOO_HIGH">Number too high</string>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Jeu calcul mental</string>
+    <string name="app_name">Jeu calcul mental</string>
     <string name="text_bouton_calcul">Mini jeu de calcul</string>
     <string name="text_bouton_meilleur_score">Meilleurs scores</string>
     <string name="text_bouton_0" translatable="false">0</string>
@@ -12,15 +12,16 @@
     <string name="text_bouton_7" translatable="false">7</string>
     <string name="text_bouton_8" translatable="false">8</string>
     <string name="text_bouton_9" translatable="false">9</string>
-    <string name="text_bouton_verif" translatable="false">Vérifier</string>
-    <string name="text_bouton_substract" translatable="false">-</string>
-    <string name="text_bouton_multiply" translatable="false">x</string>
-    <string name="text_bouton_divide" translatable="false">/</string>
     <string name="text_bouton_clear">Nettoyer</string>
-    <string name="TOOLBAR_VIE">VIE :</string>
+    <string name="text_bouton_verif">Vérifier</string>
+    <string name="TOOLBAR_VIE">VIES :</string>
     <string name="TOOLBAR_SCORE">SCORE :</string>
-    <string name="ERROR_ALREADY_HAVE_CALCUL_TYPE"> Il ne peut y avoir qu\'un seul type de calcul</string>
+    <string name="text_saisie_nom">Saisissez votre nom</string>
+    <string name="text_save">Sauvegarder</string>
+    <string name="text_classement">Classement</string>
+    <string name="text_J1">Joueur 1: </string>
+    <string name="text_J2">Joueur 2: </string>
+    <string name="text_J3">Joueur 3: </string>
     <string name="ERROR_NUMBER_TOO_HIGH"> Le nombre est trop grand</string>
-    <string name="MALFORMED_CALCUL"> Calcul malformé</string>
 
 </resources>
