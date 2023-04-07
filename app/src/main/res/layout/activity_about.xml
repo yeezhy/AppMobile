@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColorHint="#808080"
+            android:layout_marginBottom="16dp"
+            android:text="Tom FLETER et Clément SUIRE"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_launcher_foreground"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="À propos de mon application"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla laoreet elit lectus, nec hendrerit eros fringilla vel. Morbi sollicitudin bibendum vestibulum. Proin ac ipsum nec sapien euismod molestie. Sed porta in leo ut lobortis. Nullam sodales, mauris ut tincidunt rhoncus, urna libero tristique ex, vitae aliquet lorem mauris sit amet est. Fusce malesuada velit vitae turpis sagittis, non ultricies justo venenatis. Vestibulum quis velit in leo hendrerit aliquet vitae ac sapien. Aliquam rutrum, mauris eu facilisis volutpat, lacus leo iaculis urna, in posuere odio turpis nec mi. In lacinia rhoncus sodales. Sed non nibh non urna gravida commodo in eget elit."
+            android:textSize="18sp"
+            android:textColor="#333333"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

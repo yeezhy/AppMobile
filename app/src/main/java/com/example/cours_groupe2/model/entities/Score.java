@@ -1,14 +1,8 @@
 package com.example.cours_groupe2.model.entities;
 
 public class Score extends BaseEntity{
-
     private String nom;
     private Integer score;
-
-    public Score(String nom, Integer score){
-        this.nom = nom;
-        this.score=score;
-    }
 
     public Score(){}
 

@@ -24,5 +24,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_bouton_meilleur_score" />
+
+        <Button
+            android:id="@+id/boutonAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_bouton_about" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

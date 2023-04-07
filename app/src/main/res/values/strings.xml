@@ -22,6 +22,7 @@
     <string name="text_J1">Joueur 1: </string>
     <string name="text_J2">Joueur 2: </string>
     <string name="text_J3">Joueur 3: </string>
+    <string name="text_bouton_about">À propos</string>
     <string name="ERROR_NUMBER_TOO_HIGH"> Le nombre est trop grand</string>
 
 </resources>

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private Button boutonCalcul;
 
     private Button boutonMeilleurScore;
+    private Button boutonAPropos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         boutonMeilleurScore= findViewById(R.id.boutonMeilleurScore);
         boutonMeilleurScore.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this,LastActivity.class);
+            startActivity(intent);
+        });
+        boutonAPropos = findViewById(R.id.boutonAbout);
+        boutonAPropos.setOnClickListener(view ->{
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         });
     }

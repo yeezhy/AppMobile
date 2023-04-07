@@ -13,5 +13,6 @@
     <string name="text_J1">Player 1: </string>
     <string name="text_J2">Player 2: </string>
     <string name="text_J3">Player 3: </string>
+    <string name="text_bouton_about">About</string>
     <string name="ERROR_NUMBER_TOO_HIGH">Number too high</string>
 </resources>
